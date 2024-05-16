@@ -15,17 +15,31 @@ let winningTickets = [
 ];
 
 window.onload = function () {
+  // HTML element variables
+  const winningTicketsTblBody = document.querySelector(
+    "#winningTicketsTblBody"
+  );
+  //functions
+  function loadWinningTicketsTable() {
+    for (const winningTicket of winningTickets) {
+      // Create an empty <tr> element and add it to the last
+      // position of the table
+      let row = winningTicketsTblBody.insertRow();
 
-    // HTML element variables
-  
-    //functions
-    function loadWinningTicketsTable() {
+      // Create new cells (<td> elements) and add text      
+      let cell1 = row.insertCell(0);
+      cell1.innerText = winningTicket.tixNum;
 
+      let cell2 = row.insertCell(1);
+      cell2.innerText = "$" + winningTicket.prize;
+
+      let cell3 = row.insertCell(2);
+      cell3.innerText = winningTicket.expires;
     }
-  
-    //event handling
-  
-    //initial loading
-    loadWinningTicketsTable();
-  
+  }
+
+  //event handling
+
+  //initial loading
+  loadWinningTicketsTable();
 };
