@@ -26,7 +26,7 @@ window.onload = function () {
       // position of the table
       let row = winningTicketsTblBody.insertRow();
 
-      // Create new cells (<td> elements) and add text      
+      // Create new cells (<td> elements) and add text
       let cell1 = row.insertCell(0);
       cell1.innerText = winningTicket.tixNum;
 
